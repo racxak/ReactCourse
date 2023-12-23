@@ -1,11 +1,10 @@
 import CoreConcept from "./CoreConcept";
 import { CORE_CONCEPTS } from "../data";
 import React from "react";
-
+import Section from "./Section";
 function CoreConcepts () {
   return (
-  <section id="core-concepts">
-					<h2>Core Concepts</h2>
+  <Section id="core-concepts" title="Core Concepts">
 					<ul>
 						{/* <CoreConcept
 							title={CORE_CONCEPTS[0].title}
@@ -21,7 +20,7 @@ function CoreConcepts () {
 						<CoreConcept {...CORE_CONCEPTS[2]} />
 						<CoreConcept {...CORE_CONCEPTS[3]} /> */}
 					</ul>
-				</section>
+				</Section>
 	)
 };
 
