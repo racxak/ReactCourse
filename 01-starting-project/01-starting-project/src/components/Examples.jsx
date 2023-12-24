@@ -13,7 +13,6 @@ export default function Examples() {
 
 	const tabContentDisplay = (
 		<>
-			{" "}
 			{!tabContent ? (
 				<p> Please select the topic. </p>
 			) : (
@@ -29,6 +28,7 @@ export default function Examples() {
 	return (
 		<Section id="examples" title="Examples">
 			<Tabs
+				ButtonsContainer="menu"
 				buttons={
 					<>
 						<TabButton
@@ -60,7 +60,7 @@ export default function Examples() {
 						</TabButton>
 					</>
 				}
-			>
+			> 
 				{tabContentDisplay}
 			</Tabs>
 		</Section>
