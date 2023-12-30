@@ -15,6 +15,7 @@ export default function Player({ initialName, symbol }) {
 	let playerName = <span className="player-name">{name}</span>;
 
 	if (isEditing) {
+    //two-way binding
 		playerName=<input type="text" required value={name} onChange={handleChange}/>;
 	}
 
