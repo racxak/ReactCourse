@@ -8,7 +8,6 @@ export default function SingleInput({name}){
       setValue(e.target.value)
   }
   
-
   return(<div> 
     <label>{name}</label>
     <input type="number" value ={value} onChange={handleNewData}></input>

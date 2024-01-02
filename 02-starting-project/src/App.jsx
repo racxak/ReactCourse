@@ -5,7 +5,7 @@ import UserInput from "./components/userInput";
 import { calculateInvestmentResults } from "./util/investment";
 
 const VALUES = [
-	{
+  {
 		"Year": 0,
 		"Investment Value": 0,
 		"Interest (Year)": 0,
@@ -15,11 +15,13 @@ const VALUES = [
 ];
 
 function App() {
+
+  const [inputValues, setInputValues] = useState()
 	return (
 		<>
 			<Header />
 			<UserInput />
-			<ResultsTable />
+			<ResultsTable values={VALUES} />
 		</>
 	);
 }
