@@ -46,7 +46,6 @@ body {
 }
 
 #user-input label {
-  margin-top: 1rem;
   display: block;
   margin-bottom: 0.25rem;
   font-family: 'Roboto Condensed', sans-serif;
@@ -56,7 +55,6 @@ body {
 }
 
 #user-input input {
-  margin-bottom: 1rem;
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #76c0ae;
