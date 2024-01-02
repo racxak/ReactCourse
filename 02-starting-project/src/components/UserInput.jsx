@@ -17,7 +17,7 @@ export default function UserInput() {
       </span>
 
       <span className="input-group">
-			<SingleInput name={INPUT_TITLES[2]} />
+			<SingleInput name={INPUT_TITLES[2]}/>
 			<SingleInput name={INPUT_TITLES[3]} />
       </span>
 
