@@ -1,7 +1,10 @@
 import { useRef, useState } from "react";
+import ResultModal from "./ResultModal";
 
-export default function TimerChallange({ title, targetTimer }) {
+export default function TimerChallange({ title, targetTime }) {
 	const timer = useRef();
+	const dialog = useRef();
+
 	const [challengeStarted, setChallengeStrted] = useState(false);
 	const [timerExpired, setTimerExpired] = useState(false);
 
@@ -9,21 +12,23 @@ export default function TimerChallange({ title, targetTimer }) {
 		setChallengeStrted(true);
 		timer.current = setTimeout(() => {
 			setTimerExpired(true);
-			setChallengeStrted(false);
-		}, targetTimer * 1000);
+			dialog.current.showModal();
+			// setChallengeStrted(false);
+		}, targetTime * 1000);
 	}
 
 	function handleStop(){
-		setChallengeStrted(false)
+		// setChallengeStrted(false)
 		clearTimeout(timer.current)
 	}
 
 	return (
+		<>
+		{timerExpired && <ResultModal ref={dialog} result="lost" targetTime={targetTime}/>}
 		<section className="challenge">
 			<h2>{title}</h2>
-			{timerExpired && <p> You lost! </p>}
 			<p className="challenge-time">
-				{targetTimer} second{targetTimer > 1 && "s"}
+				{targetTime} second{targetTime > 1 && "s"}
 			</p>
 			<button onClick={ challengeStarted? handleStop: handleStart}>
 				{challengeStarted ? "Stop" : "Start"} Challenge
@@ -32,5 +37,6 @@ export default function TimerChallange({ title, targetTimer }) {
 				{challengeStarted ? "Time is running..." : "Timer inactive"}
 			</p>
 		</section>
+		</>
 	);
 }
