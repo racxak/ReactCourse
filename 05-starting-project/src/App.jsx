@@ -5,11 +5,11 @@ function App() {
   return (
     <>
       <Player />
-      <div id="challenges"></div>
+       <div id="challenges"></div>
       <TimerChallange title="Easy" targetTime={1} />
       <TimerChallange title="Not easy" targetTime={5} />
       <TimerChallange title="Getting tough" targetTime={10} />
-      <TimerChallange title="Pros only" targetTime={15} />
+      <TimerChallange title="Pros only" targetTime={15} /> 
 
     </>
   );
