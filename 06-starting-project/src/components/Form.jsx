@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Input from "./Input";
 import Modal from "./Modal";
 
-export default function Form({handleSaveProject}) {
+export default function Form({handleSaveProject,handleCancelProject}) {
 	const modal = useRef();
 	const title = useRef();
 	const description = useRef();
@@ -23,7 +23,6 @@ export default function Form({handleSaveProject}) {
 			description: enteredDes,
 			dueDate: enteredDueDate
 		})
-
 	}
 
 	return (
@@ -36,7 +35,7 @@ export default function Form({handleSaveProject}) {
 		<div className="w-[35rem] mt-16 ">
 			<menu className="flex items-center justify-end gap-4 my-4">
 				<li>
-					<button className="text-stone-800 hover:text-stone-950">
+					<button className="text-stone-800 hover:text-stone-950" onClick={handleCancelProject}>
 						Cancel
 					</button>
 				</li>

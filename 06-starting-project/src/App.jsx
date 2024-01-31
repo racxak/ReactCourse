@@ -15,7 +15,6 @@ function App() {
       return{
         ...prevState,
         selectedProjectId:null,
-
       }
     });
   }
@@ -31,11 +30,19 @@ function App() {
     });
   }
 
+  function handleCancelAddProject(){
+    setProjectsState((prevState) => {
+      return{
+        ...prevState,
+        selectedProjectId: undefined,
+      }
+    });
+  }
   return (
     <main className="h-screen my-8 flex gap-8">
       <YourProjects onStartAddProject={handleStartAddProject} projects={projectsState.projects}/>
       {projectsState.selectedProjectId === undefined && <EmptyProjects onStartAddProject={handleStartAddProject}></EmptyProjects>}
-      {projectsState.selectedProjectId === null && <Form handleSaveProject={handleAddProject}></Form> }
+      {projectsState.selectedProjectId === null && <Form handleSaveProject={handleAddProject} handleCancelProject={handleCancelAddProject}></Form> }
     </main>
   );
 }
