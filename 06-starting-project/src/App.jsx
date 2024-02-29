@@ -38,10 +38,23 @@ function App() {
       }
     });
   }
+
+  function handleSelectProject(id){
+    setProjectsState((prevState) => {
+      return{
+        ...prevState,
+        selectedProjectId: id,
+      }
+    });
+  }
+
+
   return (
     <main className="h-screen my-8 flex gap-8">
-      <YourProjects onStartAddProject={handleStartAddProject} projects={projectsState.projects}/>
+      <YourProjects onStartAddProject={handleStartAddProject} projects={projectsState.projects} onSelectProject={handleSelectProject} />
+
       {projectsState.selectedProjectId === undefined && <EmptyProjects onStartAddProject={handleStartAddProject}></EmptyProjects>}
+
       {projectsState.selectedProjectId === null && <Form handleSaveProject={handleAddProject} handleCancelProject={handleCancelAddProject}></Form> }
     </main>
   );
