@@ -18,8 +18,8 @@ export default function YourProjects({onStartAddProject, projects, onSelectProje
     return (
     <li key={project.id}>
     <button 
-    className={cssClass}
-    onClick={onSelectProject} >
+     className={cssClass}
+    onClick={()=>onSelectProject(project.id)} >
     {project.title}
     </button>
   </li> )})}
