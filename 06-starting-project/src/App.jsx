@@ -94,9 +94,7 @@ function App() {
 
 	return (
 		<main className="h-screen my-8 flex gap-8">
-      <p onClick={() => handleAddProject({title: "tytuł",
-			description: "des",
-			dueDate: "1.05.2024"})}>test </p>
+      
 			<YourProjects
 				onStartAddProject={handleStartAddProject}
 				projects={projectsState.projects}
